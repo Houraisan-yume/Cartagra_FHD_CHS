@@ -43,7 +43,7 @@ for c in onlyinoriginset:
 with open(f'remap_charset2.txt','w',encoding='utf8') as ff:
     ff.write(json.dumps(remap_charset2,ensure_ascii=False))
 
-for _type in  [2,4,1,3]:
+for _type in  [2,4,1]:
     
     #print((chars))
     #newcharset=origin+''.join(list(chars-set(origin)))
@@ -92,6 +92,7 @@ for _type in  [2,4,1,3]:
         newtexts=[newtexts[i] if i%3==1 else '' for i in range(len(newtexts))]
 
         chars=chars.union(set(''.join(newtexts)))
+        chars.add('年')
     origin=list(origin)
     chars=sorted(chars)
 
